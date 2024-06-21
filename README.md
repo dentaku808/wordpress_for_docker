@@ -1,17 +1,21 @@
 # wordpress for docker
 
-## Overview
+## 概要
 
-* WordPressのDocker環境  
-* Docker Desktop使用  
+* WordPressのDocker環境
+* メール送信はMailCatcherで確認できる
 
-## Container
+## 前提条件
+* Dockerがインストール済であること  
 
-* db: MySQL latest  
-* wordpress: WordPress latest  
-* phpmyadmin  
+## コンテナ
 
-## Build
+* db: MySQL latest
+* wordpress: WordPress latest
+* phpmyadmin
+* mailcatcher
+
+## ビルド
 
 * 起動  
 `$ cd (インストールディレクトリ)`  
@@ -19,16 +23,24 @@
 * 停止  
 `$ docker-compose down`  
 
-## Usage
+## 使い方
 
 ### Web
 * http://localhost/
 
 ### WordPress
-* http://localhost/wp-login.php  
+* http://localhost/wp-login.php
 
 ### phpMyAdmin
 * http://localhost:8888/  
-DB NAME: wordpress_db  
-USER: wordpress_user  
-PASS: wordpress_password
+  * DB NAME: wordpress_db
+  * USER: wordpress_user
+  * PASS: wordpress_password
+
+### MailCatcher (メール送信確認)
+* http://localhost:1080/  
+  * メーラー: その他のSMTP
+  * SMTPホスト：mailcatcher
+  * SMTPポート：1025
+  * WordPressにWP Mail SMTPプラグインを追加
+  * WordPressから送信したメールはMailCatcherの管理画面に溜まる  

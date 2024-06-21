@@ -38,3 +38,11 @@ services:
       - db
     ports:
       - 8888:80
+
+  mailcatcher:
+    container_name: mailcatcher
+    #restart: always
+    image: schickling/mailcatcher
+    ports:
+      - "1080:1080"
+      - "1025:1025"
