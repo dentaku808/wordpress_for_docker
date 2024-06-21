@@ -40,7 +40,9 @@
 ### MailCatcher (メール送信確認)
 * http://localhost:1080/  
   * メーラー: その他のSMTP
-  * SMTPホスト：mailcatcher
-  * SMTPポート：1025
+  * SMTPホスト: mailcatcher
+  * 暗号化: なし
+  * SMTPポート: 1025
+  * Authentication: Disable
   * WordPressにWP Mail SMTPプラグインを追加
   * WordPressから送信したメールはMailCatcherの管理画面に溜まる  
