@@ -14,14 +14,19 @@ services:
 
   wordpress:
     image: wordpress:latest
+    command: bash -c "apt-get update && apt-get install -y ssl-cert && a2enmod ssl headers && apache2-foreground"
     #restart: always
     volumes:
+      - ./etc/apache2/apache2.conf:/etc/apache2/apache2.conf
+      - ./etc/apache2/sites-enabled:/etc/apache2/sites-enabled
+      - ./etc/php/php.ini:/usr/local/etc/php/conf.d/php.ini
+      - ./var/logs:/var/log/apache2
       - ./var/www/html:/var/www/html
-      - ./etc/php.ini:/usr/local/etc/php/conf.d/php.ini
     depends_on:
       - db
     ports:
       - 80:80
+      - 443:443
     environment:
       WORDPRESS_DB_HOST: db:3306
       WORDPRESS_DB_NAME: wordpress_db

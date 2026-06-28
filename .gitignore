@@ -1,3 +1,5 @@
+.claude
+.specstory
 var/lib/mysql
-var/www/html/wp-admin/
-var/www/html/wp-includes/
+var/logs
+var/www

@@ -30,12 +30,14 @@
 
 ### WordPress
 * http://localhost/wp-login.php
+  * WordPress本体は/var/www/html以下に設置すること
 
 ### phpMyAdmin
 * http://localhost:8888/  
   * DB NAME: wordpress_db
   * USER: wordpress_user
   * PASS: wordpress_password
+  * HOST: db
 
 ### MailCatcher (メール送信確認)
 * http://localhost:1080/  
@@ -43,6 +45,6 @@
   * SMTPホスト: mailcatcher
   * 暗号化: なし
   * SMTPポート: 1025
-  * Authentication: Disable
+  * 認証: Disable
   * WordPressにWP Mail SMTPプラグインを追加
   * WordPressから送信したメールはMailCatcherの管理画面に溜まる  
